@@ -4,8 +4,14 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@Path("hello")
+@Path("/hello")
 public class GreetingResource {
+
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String hello() {
+        return "Hello RESTEasy";
+    }
 
     @GET
     @Path("/personalized/{name}")
