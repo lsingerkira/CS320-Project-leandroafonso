@@ -7,6 +7,7 @@ import java.util.List;
 
 @Path( "/user")
 public class UserNameResource {
+
 // Create
 @POST
 @Path( "/{name}")
@@ -17,12 +18,15 @@ public String createUser(@PathParam( "name" ) String name) {
     userName.persist();
     return "Hello " + name + "! Your name has been stored in the database.";
     }
+
+ // Get
  @GET
  @Produces(MediaType.APPLICATION_JSON)
  public List<UserName> getNames(){
     return UserName.listAll();
  }
 
+// Update
  @PATCH
  @Path("/{id}")
  @Produces(MediaType.TEXT_PLAIN)
@@ -34,6 +38,7 @@ public String createUser(@PathParam( "name" ) String name) {
     return "'" + oldName + "' has been updated to '" + newName + "' in the database.";
     }
 
+// Delete
 @DELETE
 @Path("/{id}")
 @Produces(MediaType.TEXT_PLAIN)
