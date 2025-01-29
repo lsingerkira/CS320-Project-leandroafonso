@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { API_URL } from "./config"; // Gets the API_URL from the config.js file
+import { API_URL } from "../config"; // Gets the API_URL from the config.js file
 
 function App() {
     const [message, setMessage] = useState(""); // Will hold the message from the backend
