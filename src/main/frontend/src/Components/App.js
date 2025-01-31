@@ -1,29 +1,39 @@
-import { useEffect, useState } from "react";
-import { API_URL } from "../config"; // Gets the API_URL from the config.js file
+import {useEffect, useState} from 'react';
+import {API_URL} from "../config";
 
 function App() {
-    const [message, setMessage] = useState(""); // Will hold the message from the backend
+    const [message, setMessage] = useState('');
 
-    // "useEffect" is a React hook that runs after the component is mounted
-    useEffect(() => {
+    useEffect(()=> {
         const fetchMessage = async () => {
-                const response = await fetch(`${API_URL}/hello/personalized`, {
-                    method: "POST", // POST request
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({ firstName: "Ensign", lastName: "Student" }), // JSON body with attributes for a Person
-                });
-                const text = await response.text(); // Waits for the response and then converts it to text
-                setMessage(text); // Sets the message with the text from the response
+            const response = await fetch (`${API_URL}/hello/personalized`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({first: 'Ensign', last: 'Student'})
+            });
+            const text = await response.text();
+            setMessage(text);
         };
         fetchMessage();
-    }, []); // Dependency array ensures this runs only once when the component mounts
+    }, []);
 
     return (
-        <div>
-            <h1>Message from the Backend:</h1>
-            <p>{message}</p>
+        <div style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+            height: "100vh",
+            justifyContent: "center",
+            background: "#74c69d"
+        }}>
+
+            <h1 style={{ fontSize: "84px" }}>RANDOM TASK APP</h1>
+            <h2 style={{ fontSize: "56px" }}>Effortless Task Management</h2>
+            <h3 style={{ fontSize: "36px" }}>Organize, Prioritize, and Conquer your To-Do List with Ease</h3>
+            {/*<p>{message}</p>*/}
         </div>
     );
 }

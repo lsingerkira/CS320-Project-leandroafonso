@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './Components/App';
-import Page2 from './Components/Page2';
+import Boards from './Components/Boards';
 import Navbar from './Components/Navbar';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import { Amplify } from 'aws-amplify';
 import config from './amplifyconfiguration.json';
 Amplify.configure(config);
+import LogIn from './Components/LogIn';
+import Templates from './Components/Templates';
 //import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,7 +19,9 @@ root.render(
           <Navbar/>
           <Routes>
               <Route path="/" element={<App/>}/>
-              <Route path="/page2" element={<Page2/>}/>
+              <Route path="/boards" element={<Boards/>}/>
+              <Route path="/logIn" element={<LogIn/>}/>
+              <Route path="/templates" element={<Templates/>}/>
               {/*Here we add more pages by adding more Route elements*/}
           </Routes>
       </BrowserRouter>
