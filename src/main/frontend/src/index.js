@@ -7,9 +7,9 @@ import Navbar from './Components/Navbar';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import { Amplify } from 'aws-amplify';
 import config from './amplifyconfiguration.json';
-Amplify.configure(config);
 import LogIn from './Components/LogIn';
 import Templates from './Components/Templates';
+Amplify.configure(config);
 //import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
