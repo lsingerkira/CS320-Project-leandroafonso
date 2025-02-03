@@ -9,6 +9,9 @@ import { Amplify } from 'aws-amplify';
 import config from './amplifyconfiguration.json';
 import LogIn from './Components/LogIn';
 import Templates from './Components/Templates';
+import ErrorHandlingPage from './Components/ErrorHandlingPage';{/*5.2 Assignment test*/}
+
+
 Amplify.configure(config);
 //import reportWebVitals from './reportWebVitals';
 
@@ -23,6 +26,8 @@ root.render(
               <Route path="/logIn" element={<LogIn/>}/>
               <Route path="/templates" element={<Templates/>}/>
               {/*Here we add more pages by adding more Route elements*/}
+              {/*Inserting this route to test the ErrorHandlingPage for 5.2*/}
+              <Route path="/error" element={<ErrorHandlingPage />} />
           </Routes>
       </BrowserRouter>
   </React.StrictMode>

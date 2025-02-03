@@ -34,6 +34,7 @@ function App() {
             <h2 style={{ fontSize: "56px" }}>Effortless Task Management</h2>
             <h3 style={{ fontSize: "36px" }}>Organize, Prioritize, and Conquer your To-Do List with Ease</h3>
             {/*<p>{message}</p>*/}
+
         </div>
     );
 }
