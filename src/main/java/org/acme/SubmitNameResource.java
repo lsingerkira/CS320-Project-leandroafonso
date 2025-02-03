@@ -24,6 +24,12 @@ public class SubmitNameResource {
                     "Please enter only one name. Make sure your name does not contain spaces.").build();
         }
 
+        // Check if the name contains only letters (no numbers or special characters)
+        if (!user.name.matches("^[a-zA-Z]+$")) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(
+                    "Invalid input. Please enter a valid name using only letters. Numbers and special characters are not allowed.").build();
+        }
+
         // Create name in database
         user.persist();
 
